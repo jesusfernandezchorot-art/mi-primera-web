@@ -1,0 +1,1 @@
+Este archivo solo existe en la rama 'rama-idea-comercial'. Si vuelves a la rama 'main', este archivo desaparece sin romper el proyecto original.

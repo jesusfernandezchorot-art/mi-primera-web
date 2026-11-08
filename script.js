@@ -8,7 +8,7 @@ function chooseModality(modalityName, cardElement) {
     label.innerHTML = 'Opción seleccionada: <strong style="color:#fde68a">' + modalityName + '</strong>.<br>Pulsa WhatsApp o Gmail para enviar tu reserva:';
 
     const whatsappBtn = document.getElementById('whatsapp-btn');
-    const encodedMsg = encodeURIComponent('Hola Elena, he escaneado el código QR y me gustaría reservar/consultar sobre: ' + modalityName);
+    const encodedMsg = encodeURIComponent('Hola, he escaneado el código QR y me gustaría reservar/consultar sobre: ' + modalityName);
     whatsappBtn.href = 'https://wa.me/34664731022?text=' + encodedMsg;
 
     const gmailBtn = document.getElementById('gmail-btn');

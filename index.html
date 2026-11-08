@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docencia Universitaria - Reserva de Clases e Intensivo Diciembre/Enero</title>
+    <title>Docencia Universitaria - Clases Particulares y Preparación de Exámenes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,45 +11,53 @@
         <header class="academic-header">
             <div class="cap-icon">🎓</div>
             <div class="crest-badge">DOCENCIA UNIVERSITARIA</div>
-            <h1>Clases Particulares &amp; Preparación de Exámenes</h1>
+            <h1>Clases Particulares y Preparación de Exámenes</h1>
             <p class="header-subtitle">Atención académica personalizada • Enfoque práctico y resultados</p>
         </header>
 
         <main class="poster-body">
             <!-- OPCIÓN 1: INTENSIVO DICIEMBRE / ENERO (DESTACADO) -->
-            <section class="card featured-card" onclick="chooseModality('Curso Intensivo Diciembre/Enero (18h curso completo - 108 € con promo 10% dto.)', this)">
+            <section class="card featured-card" onclick="chooseModality('Curso Intensivo Diciembre/Enero (18h curso completo - 108 € con dto. 10%)', this)">
                 <div class="promo-ribbon">
-                    🔥 <strong>PROMOCIÓN: 10% DE DESCUENTO</strong> reservando antes del 30 de noviembre
+                    🔥 <strong>EXCLUSIVO INTENSIVO: 10% DE DESCUENTO</strong> hasta el 30 de noviembre
                 </div>
                 <div class="card-inner">
-                    <span class="tag-exam">🎯 Especial Exámenes de Enero</span>
+                    <span class="tag-exam">🎯 Especial Exámenes Enero • Dto. 10% hasta el 30 de noviembre</span>
                     <h2>Intensivo Diciembre / Enero</h2>
                     <p class="card-desc">
-                        Preparación completa y estructurada enfocada a superar con éxito los exámenes de la convocatoria de enero.
+                        Curso completo de <strong>18 horas en total</strong>, distribuido a lo largo de las semanas de diciembre en sesiones de <strong>2 a 3 horas semanales</strong>.
                     </p>
+
+                    <div class="included-material">
+                        <div class="material-title">📚 Material académico incluido en el intensivo:</div>
+                        <ul class="material-list">
+                            <li>✔️ <strong>Ejercicios resueltos del boletín</strong> paso a paso</li>
+                            <li>✔️ <strong>Apuntes completos</strong>, resúmenes y documentos de examen, etc.</li>
+                        </ul>
+                    </div>
 
                     <div class="intensive-stats">
                         <div class="stat-box">
-                            <span class="stat-label">Duración total</span>
-                            <span class="stat-value">⏱️ 18 horas</span>
-                            <span class="stat-sub">Curso completo</span>
+                            <span class="stat-label">Duración del curso</span>
+                            <span class="stat-value">⏱️ 18 h (Curso completo)</span>
+                            <span class="stat-sub">Dividido en 2/3 h semanales</span>
                         </div>
                         <div class="stat-box highlight-price">
-                            <span class="stat-label">Precio Promoción (-10%)</span>
+                            <span class="stat-label">Dto. 10% hasta 30 Nov</span>
                             <div class="price-comparison">
                                 <span class="old-price">120 €</span>
                                 <span class="new-price">108 €</span>
                             </div>
-                            <span class="stat-sub">Tarifa normal: 120 €</span>
+                            <span class="stat-sub">Solo aplicable al Intensivo</span>
                         </div>
                     </div>
 
                     <div class="discount-note">
-                        ✅ Reserva antes del <strong>30 de noviembre</strong> por solo <strong>108 €</strong> (ahorras 12 €).
+                        ✅ <strong>10% de descuento hasta el 30 de noviembre</strong> (exclusivo para el Intensivo Diciembre/Enero: se queda en <strong>108 €</strong>).
                     </div>
 
                     <button type="button" class="btn-reserve">
-                        Reservar Plaza Intensivo (108 €) →
+                        Reservar Plaza Intensivo →
                     </button>
                 </div>
             </section>
@@ -80,7 +88,7 @@
                     <div class="pack-left">
                         <span class="pack-badge">⭐ DESCUENTO 5 CLASES</span>
                         <div class="pack-title">Bono 5 Clases Individuales</div>
-                        <div class="pack-sub">Se queda a solo <strong>16 € la clase</strong> (ahorras 10 €)</div>
+                        <div class="pack-sub">Se queda a solo <strong>16 € la clase</strong> (5 clases por 80 €)</div>
                     </div>
                     <div class="pack-price-box">
                         <span class="pack-total">80 €</span>
@@ -105,27 +113,21 @@
                 </div>
             </section>
 
-            <!-- ZONA DE CONTACTO DIRECTO (WHATSAPP Y GMAIL) -->
+            <!-- ZONA DE CONTACTO DIRECTO (SOLO WHATSAPP Y GMAIL LIMPIOS) -->
             <section class="contact-box" id="contact-section">
                 <div class="contact-header">
-                    <span class="contact-eyebrow">🎓 Reserva de plaza y contacto directo</span>
-                    <p id="selected-modality-text">Toca arriba la modalidad que te interese o escríbenos directamente:</p>
+                    <span class="contact-eyebrow">🎓 Reserva de plaza y contacto</span>
+                    <p id="selected-modality-text">Toca arriba la modalidad que te interese o contáctanos directamente:</p>
                 </div>
 
-                <a id="whatsapp-btn" href="https://wa.me/34664731022?text=Hola%20Elena,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20quiero%20informaci%C3%B3n%20sobre%20las%20clases." target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp">
+                <a id="whatsapp-btn" href="https://wa.me/34664731022?text=Hola,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20quiero%20informaci%C3%B3n%20sobre%20las%20clases." target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp">
                     <span class="btn-icon">💬</span>
-                    <div>
-                        <div class="btn-main-text">Reservar / Consultar por WhatsApp</div>
-                        <div class="btn-sub-text">+34 664 73 10 22</div>
-                    </div>
+                    <span class="btn-main-text">WhatsApp</span>
                 </a>
 
-                <a id="gmail-btn" href="mailto:elenagomezfernandez28@gmail.com?subject=Reserva%20de%20Clases%20Universitarias&body=Hola%20Elena,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20las%20clases." class="btn-contact btn-gmail">
+                <a id="gmail-btn" href="mailto:elenagomezfernandez28@gmail.com?subject=Reserva%20de%20Clases%20Universitarias&body=Hola,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20las%20clases." class="btn-contact btn-gmail">
                     <span class="btn-icon">✉️</span>
-                    <div>
-                        <div class="btn-main-text">Contactar por Gmail</div>
-                        <div class="btn-sub-text">elenagomezfernandez28@gmail.com</div>
-                    </div>
+                    <span class="btn-main-text">Gmail</span>
                 </a>
             </section>
         </main>

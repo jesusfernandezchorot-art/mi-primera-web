@@ -3,40 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primera Web con GitHub</title>
+    <title>Docencia Universitaria - Reserva de Clases e Intensivo Diciembre/Enero</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <span class="badge">Proyecto de Prueba</span>
-            <h1>¡Hola, Mundo! 🚀</h1>
-            <p class="subtitle">Mi primera página web lista para subirse a Git y GitHub.</p>
+    <div class="mobile-poster">
+        <header class="academic-header">
+            <div class="cap-icon">🎓</div>
+            <div class="crest-badge">DOCENCIA UNIVERSITARIA</div>
+            <h1>Clases Particulares &amp; Preparación de Exámenes</h1>
+            <p class="header-subtitle">Atención académica personalizada • Enfoque práctico y resultados</p>
         </header>
 
-        <main>
-            <div class="card">
-                <h2>¿Qué estamos probando aquí?</h2>
-                <ul class="checklist">
-                    <li>✅ Crear una página web con HTML, CSS y JavaScript</li>
-                    <li id="step-git">⏳ Inicializar un repositorio con <strong>Git</strong></li>
-                    <li id="step-github">⏳ Subir el proyecto a <strong>GitHub</strong></li>
-                </ul>
+        <main class="poster-body">
+            <!-- OPCIÓN 1: INTENSIVO DICIEMBRE / ENERO (DESTACADO) -->
+            <section class="card featured-card" onclick="chooseModality('Curso Intensivo Diciembre/Enero (18h curso completo - 108 € con promo 10% dto.)', this)">
+                <div class="promo-ribbon">
+                    🔥 <strong>PROMOCIÓN: 10% DE DESCUENTO</strong> reservando antes del 30 de noviembre
+                </div>
+                <div class="card-inner">
+                    <span class="tag-exam">🎯 Especial Exámenes de Enero</span>
+                    <h2>Intensivo Diciembre / Enero</h2>
+                    <p class="card-desc">
+                        Preparación completa y estructurada enfocada a superar con éxito los exámenes de la convocatoria de enero.
+                    </p>
+
+                    <div class="intensive-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">Duración total</span>
+                            <span class="stat-value">⏱️ 18 horas</span>
+                            <span class="stat-sub">Curso completo</span>
+                        </div>
+                        <div class="stat-box highlight-price">
+                            <span class="stat-label">Precio Promoción (-10%)</span>
+                            <div class="price-comparison">
+                                <span class="old-price">120 €</span>
+                                <span class="new-price">108 €</span>
+                            </div>
+                            <span class="stat-sub">Tarifa normal: 120 €</span>
+                        </div>
+                    </div>
+
+                    <div class="discount-note">
+                        ✅ Reserva antes del <strong>30 de noviembre</strong> por solo <strong>108 €</strong> (ahorras 12 €).
+                    </div>
+
+                    <button type="button" class="btn-reserve">
+                        Reservar Plaza Intensivo (108 €) →
+                    </button>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Modalidades de Clases Regulares</span>
             </div>
 
-            <div class="card interactive-card">
-                <h2>Zona Interactiva</h2>
-                <p>Haz clic en el botón para probar que el código JavaScript funciona:</p>
-                <div class="counter-box">
-                    <button id="click-btn" class="btn-primary">¡Haz clic aquí! (0)</button>
-                    <button id="theme-btn" class="btn-secondary">Cambiar tema 🌙</button>
+            <!-- OPCIÓN 2: CLASE INDIVIDUAL + BONO 5 CLASES -->
+            <section class="card modality-card-wrapper">
+                <div class="modality-card" onclick="chooseModality('Clase Individual suelta (18 €/hora)', this.parentElement)">
+                    <div class="modality-info">
+                        <div class="modality-title">
+                            <span class="icon">👤</span>
+                            <h3>Clase Individual (Tú solo)</h3>
+                        </div>
+                        <p>Sesión 1 a 1 totalmente adaptada a tus dudas, ritmo y asignatura.</p>
+                        <span class="select-link">Elegir clase suelta (18 €/h) →</span>
+                    </div>
+                    <div class="price-badge">
+                        <span class="amount">18 €</span>
+                        <span class="per-unit">/ hora</span>
+                    </div>
                 </div>
-                <p id="message" class="hidden"></p>
-            </div>
+
+                <!-- BONO DESCUENTO 5 CLASES -->
+                <div class="pack-promo-box" onclick="chooseModality('Bono de 5 Clases Individuales por 80 € (16 €/clase)', this.parentElement)">
+                    <div class="pack-left">
+                        <span class="pack-badge">⭐ DESCUENTO 5 CLASES</span>
+                        <div class="pack-title">Bono 5 Clases Individuales</div>
+                        <div class="pack-sub">Se queda a solo <strong>16 € la clase</strong> (ahorras 10 €)</div>
+                    </div>
+                    <div class="pack-price-box">
+                        <span class="pack-total">80 €</span>
+                        <span class="pack-unit">5 clases (16€/h)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OPCIÓN 3: CLASE EN GRUPO -->
+            <section class="card modality-card" onclick="chooseModality('Clase en Grupo de 3 a 4 personas (40 €/hora)', this)">
+                <div class="modality-info">
+                    <div class="modality-title">
+                        <span class="icon">👥</span>
+                        <h3>Clase en Grupo (3 a 4 personas)</h3>
+                    </div>
+                    <p>Grupos reducidos de 3 a 4 compañeros (sale entre 10 € y 13,30 € por alumno/hora).</p>
+                    <span class="select-link">Seleccionar clase en grupo →</span>
+                </div>
+                <div class="price-badge">
+                    <span class="amount">40 €</span>
+                    <span class="per-unit">/ hora grupo</span>
+                </div>
+            </section>
+
+            <!-- ZONA DE CONTACTO DIRECTO (WHATSAPP Y GMAIL) -->
+            <section class="contact-box" id="contact-section">
+                <div class="contact-header">
+                    <span class="contact-eyebrow">🎓 Reserva de plaza y contacto directo</span>
+                    <p id="selected-modality-text">Toca arriba la modalidad que te interese o escríbenos directamente:</p>
+                </div>
+
+                <a id="whatsapp-btn" href="https://wa.me/34664731022?text=Hola%20Elena,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20quiero%20informaci%C3%B3n%20sobre%20las%20clases." target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp">
+                    <span class="btn-icon">💬</span>
+                    <div>
+                        <div class="btn-main-text">Reservar / Consultar por WhatsApp</div>
+                        <div class="btn-sub-text">+34 664 73 10 22</div>
+                    </div>
+                </a>
+
+                <a id="gmail-btn" href="mailto:elenagomezfernandez28@gmail.com?subject=Reserva%20de%20Clases%20Universitarias&body=Hola%20Elena,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20las%20clases." class="btn-contact btn-gmail">
+                    <span class="btn-icon">✉️</span>
+                    <div>
+                        <div class="btn-main-text">Contactar por Gmail</div>
+                        <div class="btn-sub-text">elenagomezfernandez28@gmail.com</div>
+                    </div>
+                </a>
+            </section>
         </main>
 
-        <footer>
-            <p>Creado con Antigravity • Listo para GitHub</p>
+        <footer class="academic-footer">
+            <p>🎓 Docencia Académica Universitaria • Curso 2026 / 2027</p>
         </footer>
     </div>
 

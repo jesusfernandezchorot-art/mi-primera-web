@@ -8,9 +8,9 @@ const COURSES = {
         indHeading: 'Clase Individual de Estadística',
         grpHeading: 'Clase en Grupo de Estadística',
         bulletsInt: [
-            '✔️ <strong>Desde diciembre hasta el mismo día de tu examen de enero:</strong> te acompañamos hasta que te examines.',
-            '✔️ <strong>Clases semanales</strong> estructuradas para llevar toda la asignatura al día.',
-            '✔️ <strong>Resolución de dudas continua</strong> disponible hasta la fecha de tu examen, sea cuando sea tu convocatoria.',
+            '✔️ <strong>Desde diciembre hasta el día de tu examen de enero:</strong> acompañamiento completo.',
+            '✔️ <strong>Clases semanales</strong> para ver y practicar todo el temario.',
+            '✔️ <strong>Dudas hasta el día del examen:</strong> seguimos disponibles resolviendo tus dudas hasta que te examines.',
             '✔️ Incluye <strong>ejercicios resueltos del boletín, apuntes completos y documentos</strong> de examen (Turismo, ADE, Finanzas y Contabilidad, Criminología, Sociología y Economía).'
         ],
         bulletsInd: [
@@ -34,9 +34,9 @@ const COURSES = {
         indHeading: 'Clase Individual de Estadística Avanzada',
         grpHeading: 'Clase en Grupo de Estadística Avanzada',
         bulletsInt: [
-            '✔️ <strong>Desde diciembre hasta el mismo día de tu examen de enero:</strong> te acompañamos hasta que te examines.',
+            '✔️ <strong>Desde diciembre hasta el día de tu examen de enero:</strong> acompañamiento completo.',
             '✔️ <strong>Clases semanales</strong> enfocadas al 100% en superar la asignatura.',
-            '✔️ <strong>Resolución de dudas continua</strong> disponible hasta la fecha de tu examen de enero.',
+            '✔️ <strong>Dudas hasta el día del examen:</strong> seguimos disponibles resolviendo tus dudas hasta que te examines.',
             '✔️ Incluye <strong>ejercicios resueltos del boletín, apuntes completos y documentos</strong> de Estadística Avanzada y Estadística para Finanzas.'
         ],
         bulletsInd: [
@@ -79,12 +79,10 @@ function initPage() {
     document.getElementById('card-grp-heading').textContent = activeCourse.grpHeading;
     document.getElementById('footer-course-text').textContent = '🎓 Clases Particulares de ' + activeCourse.name + ' • Curso 2026 / 2027';
 
-    // Actualizar enlaces generales de contacto con el nombre de la asignatura (sin "Por favor, ponte en contacto conmigo")
-    const defaultMsg = encodeURIComponent('Hola Elena, he escaneado el código QR de ' + activeCourse.name + ' y me gustaría recibir información sobre las clases.');
+    const defaultMsg = encodeURIComponent('Hola Elena, he escaneado el código QR de ' + activeCourse.name + ' y me gustaría pedir más información sobre las clases.');
     document.getElementById('main-wa-btn').href = 'https://wa.me/34664731022?text=' + defaultMsg;
     document.getElementById('main-gm-btn').href = 'mailto:elenagomezfernandez28@gmail.com?subject=' + encodeURIComponent('Información Clases de ' + activeCourse.name) + '&body=' + defaultMsg;
 
-    // Aplicar estado del descuento del 10% según si estamos antes o después del 20 de noviembre a las 23:59
     if (isPromoValid()) {
         document.getElementById('promo-ribbon-banner').classList.remove('hidden');
         document.getElementById('int-price-label').textContent = 'Con 10% Dto. (hasta 20 nov)';
@@ -92,7 +90,7 @@ function initPage() {
         document.getElementById('int-price-sub').textContent = 'Precio sin dto.: 120 €';
     } else {
         document.getElementById('promo-ribbon-banner').classList.add('hidden');
-        document.getElementById('int-price-label').textContent = 'Precio Intensivo Completo';
+        document.getElementById('int-price-label').textContent = 'Precio Intensivo';
         document.getElementById('int-price-box').innerHTML = '<span class="new-price">120 €</span>';
         document.getElementById('int-price-sub').textContent = 'Desde diciembre hasta tu examen';
     }
@@ -112,13 +110,13 @@ function openModalityDetail(type) {
     if (type === 'intensivo') {
         badge.textContent = '🎯 Desde Diciembre hasta tu Examen • ' + activeCourse.name;
         title.textContent = activeCourse.intHeading + ' (' + activeCourse.name + ')';
-        desc.textContent = 'Curso intensivo con clases semanales que abarca desde diciembre hasta la fecha de tu examen de enero. Aunque los contenidos se completen con antelación, seguimos disponibles resolviendo dudas y practicando contigo hasta el mismo día en que te examines.';
+        desc.textContent = 'Curso intensivo desde diciembre hasta el examen de enero con clases semanales, resolución de dudas hasta el mismo día del examen y todo el material incluido.';
         bulletList = activeCourse.bulletsInt;
         indBtns.classList.add('hidden');
         singleBtn.classList.remove('hidden');
 
         if (isPromoValid()) {
-            priceBox.innerHTML = '💶 Precio: <s>120 €</s> <strong>108 €</strong> (10% de descuento reservando hasta el 20 de noviembre).';
+            priceBox.innerHTML = '💶 Precio: <s>120 €</s> <strong>108 €</strong> (10% de descuento hasta el 20 de noviembre).';
             selectedModalityTitle = 'Intensivo desde Diciembre hasta Examen de ' + activeCourse.name;
             selectedModalityPrice = '108 € con el 10% de descuento';
         } else {
@@ -171,10 +169,10 @@ function selectChannel(ch) {
 }
 
 function finalizeBooking() {
-    // Mensaje limpio sin "Por favor, ponte en contacto conmigo"
-    const msgText = 'Hola Elena, quiero reservar plaza para: ' + selectedModalityTitle + ' (' + selectedModalityPrice + ').';
+    // Mensaje de contacto sin compromiso y sin "Por favor, ponte en contacto conmigo"
+    const msgText = 'Hola Elena, me gustaría pedir más información sobre: ' + selectedModalityTitle + ' (' + selectedModalityPrice + ').';
     const encodedMsg = encodeURIComponent(msgText);
-    const encodedSubj = encodeURIComponent('Reserva de Clase: ' + selectedModalityTitle);
+    const encodedSubj = encodeURIComponent('Información Clases: ' + selectedModalityTitle);
 
     const waUrl = 'https://wa.me/34664731022?text=' + encodedMsg;
     const mailtoUrl = 'mailto:elenagomezfernandez28@gmail.com?subject=' + encodedSubj + '&body=' + encodedMsg;
@@ -198,8 +196,8 @@ function openEmailFallback(event, mailtoHref) {
         event.preventDefault();
         const urlParts = mailtoHref.split('?');
         const params = new URLSearchParams(urlParts[1] || '');
-        const su = params.get('subject') || ('Reserva de Clases de ' + activeCourse.name);
-        const body = params.get('body') || ('Hola Elena, me gustaría recibir información sobre las clases de ' + activeCourse.name + '.');
+        const su = params.get('subject') || ('Información Clases de ' + activeCourse.name);
+        const body = params.get('body') || ('Hola Elena, me gustaría pedir más información sobre las clases de ' + activeCourse.name + '.');
         const gmailWebUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=elenagomezfernandez28@gmail.com&su=' + encodeURIComponent(su) + '&body=' + encodeURIComponent(body);
         window.open(gmailWebUrl, '_blank');
     }

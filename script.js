@@ -59,8 +59,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const courseKey = window.FORCED_COURSE || urlParams.get('c') || '1';
 const activeCourse = COURSES[courseKey] || COURSES['1'];
 
-// Comprobación automática de fecha límite del descuento: 30 de noviembre de 2026 a las 23:59:59
-const DISCOUNT_DEADLINE = new Date('2026-11-30T23:59:59+01:00');
+// Comprobación automática de fecha límite del descuento: 20 de noviembre de 2026 a las 23:59:59
+const DISCOUNT_DEADLINE = new Date('2026-11-20T23:59:59+01:00');
 function isPromoValid() {
     return new Date() <= DISCOUNT_DEADLINE;
 }
@@ -84,10 +84,10 @@ function initPage() {
     document.getElementById('main-wa-btn').href = 'https://wa.me/34664731022?text=' + defaultMsg;
     document.getElementById('main-gm-btn').href = 'mailto:elenagomezfernandez28@gmail.com?subject=' + encodeURIComponent('Información Clases de ' + activeCourse.name) + '&body=' + defaultMsg;
 
-    // Aplicar estado del descuento del 10% según si estamos antes o después del 30 de noviembre a las 23:59
+    // Aplicar estado del descuento del 10% según si estamos antes o después del 20 de noviembre a las 23:59
     if (isPromoValid()) {
         document.getElementById('promo-ribbon-banner').classList.remove('hidden');
-        document.getElementById('int-price-label').textContent = 'Con 10% Dto. (hasta 30 nov)';
+        document.getElementById('int-price-label').textContent = 'Con 10% Dto. (hasta 20 nov)';
         document.getElementById('int-price-box').innerHTML = '<span class="old-price">120 €</span><span class="new-price">108 €</span>';
         document.getElementById('int-price-sub').textContent = 'Precio sin dto.: 120 €';
     } else {
@@ -118,7 +118,7 @@ function openModalityDetail(type) {
         singleBtn.classList.remove('hidden');
 
         if (isPromoValid()) {
-            priceBox.innerHTML = '💶 Precio: <s>120 €</s> <strong>108 €</strong> (10% de descuento reservando antes del 30 de noviembre).';
+            priceBox.innerHTML = '💶 Precio: <s>120 €</s> <strong>108 €</strong> (10% de descuento reservando antes del 20 de noviembre).';
             selectedModalityTitle = activeCourse.intHeading + ' (18h curso completo)';
             selectedModalityPrice = '108 € con el 10% de descuento';
         } else {

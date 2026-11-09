@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descargar Carteles para Imprimir — Estadística y Estadística Avanzada</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 32px 16px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    p.sub {
+      color: #94a3b8;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 460px));
+      gap: 28px;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 14px;
+      color: #f8fafc;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      margin-bottom: 18px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.92; transform: translateY(-1px); }
+    .btn-blue { background: #2563eb; }
+    .btn-green { background: #059669; }
+  </style>
+</head>
+<body>
+  <h1>Carteles Publicitarios Listos para Imprimir (300 DPI)</h1>
+  <p class="sub">Pulsa el botón debajo de cada cartel para descargar el archivo PNG en máxima calidad (2400 × 3360 px)</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>1. Cartel Estadística (?c=1)</h2>
+      <img src="CARTEL_1_ESTADISTICA_IMPRIMIR.png" alt="Cartel Estadística" />
+      <a class="btn btn-blue" href="CARTEL_1_ESTADISTICA_IMPRIMIR.png" download="CARTEL_1_ESTADISTICA_IMPRIMIR.png">
+        ⬇ Descargar Cartel 1 (PNG Máxima Calidad)
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>2. Cartel Estadística Avanzada (?c=2)</h2>
+      <img src="CARTEL_2_ESTADISTICA_AVANZADA_IMPRIMIR.png" alt="Cartel Estadística Avanzada" />
+      <a class="btn btn-green" href="CARTEL_2_ESTADISTICA_AVANZADA_IMPRIMIR.png" download="CARTEL_2_ESTADISTICA_AVANZADA_IMPRIMIR.png">
+        ⬇ Descargar Cartel 2 (PNG Máxima Calidad)
+      </a>
+    </div>
+  </div>
+</body>
+</html>

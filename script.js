@@ -3,58 +3,58 @@ const COURSES = {
     '1': {
         name: 'Estadística',
         hookTitle: '¿Atascado con ESTADÍSTICA?',
-        degrees: 'Grados: Turismo • ADE • Finanzas y Contabilidad • Criminología • Sociología • Análisis Económico',
-        intHeading: 'Intensivo para el Examen de Estadística',
+        degrees: 'Grados: Turismo • ADE • Finanzas y Contabilidad • Criminología • Sociología • Economía',
+        intHeading: 'Intensivo desde Diciembre hasta tu Examen de Enero',
         indHeading: 'Clase Individual de Estadística',
         grpHeading: 'Clase en Grupo de Estadística',
         bulletsInt: [
-            '✔️ <strong>18 horas el curso completo</strong>, dividido en <strong>2 o 3 horas semanales</strong> desde diciembre hasta la primera semana de enero.',
-            '✔️ <strong>Ejercicios resueltos del boletín</strong> de Estadística paso a paso.',
-            '✔️ <strong>Apuntes completos, formularios y documentos</strong> enfocados al examen de enero.',
-            '✔️ Adaptado a Turismo, ADE, Finanzas y Contabilidad, Criminología, Sociología y Análisis Económico.'
+            '✔️ <strong>Desde diciembre hasta el mismo día de tu examen de enero:</strong> te acompañamos hasta que te examines.',
+            '✔️ <strong>Clases semanales</strong> estructuradas para llevar toda la asignatura al día.',
+            '✔️ <strong>Resolución de dudas continua</strong> disponible hasta la fecha de tu examen, sea cuando sea tu convocatoria.',
+            '✔️ Incluye <strong>ejercicios resueltos del boletín, apuntes completos y documentos</strong> de examen (Turismo, ADE, Finanzas y Contabilidad, Criminología, Sociología y Economía).'
         ],
         bulletsInd: [
             '✔️ Clases particulares 1 a 1 (tú solo con la profesora Elena) de <strong>Estadística</strong>.',
             '✔️ Resolución personalizada de los <strong>ejercicios del boletín</strong> de tu grado.',
-            '✔️ <strong>Apuntes, documentos de apoyo</strong> y preparación intensiva de tus dudas.',
+            '✔️ Incluye <strong>apuntes, documentos de apoyo</strong> y resolución de todas tus dudas.',
             '✔️ Opción de clase suelta (18 €/h) o <strong>Bono de 5 clases por 80 € (16 €/clase)</strong>.'
         ],
         bulletsGrp: [
             '✔️ Grupo reducido de <strong>3 a 4 personas</strong> de <strong>Estadística</strong>.',
             '✔️ Explicación práctica del temario y resolución conjunta de <strong>ejercicios del boletín</strong>.',
-            '✔️ Incluye <strong>apuntes, documentos</strong> y práctica de exámenes reales.',
-            '✔️ Tarifa de grupo completo: <strong>40 €</strong> (entre 3 y 4 compañeros).'
+            '✔️ Incluye <strong>apuntes, documentos</strong> y preparación de exámenes.',
+            '✔️ Tarifa: <strong>40 € al mes por persona</strong>.'
         ]
     },
     '2': {
         name: 'Estadística Avanzada',
         hookTitle: 'Aprueba ESTADÍSTICA AVANZADA',
         degrees: 'Estadística Avanzada • Estadística para Finanzas',
-        intHeading: 'Intensivo para el Examen de Estadística Avanzada',
+        intHeading: 'Intensivo desde Diciembre hasta tu Examen de Enero',
         indHeading: 'Clase Individual de Estadística Avanzada',
         grpHeading: 'Clase en Grupo de Estadística Avanzada',
         bulletsInt: [
-            '✔️ <strong>18 horas el curso completo</strong>, dividido en <strong>2 o 3 horas semanales</strong> desde diciembre hasta la primera semana de enero.',
-            '✔️ <strong>Ejercicios resueltos del boletín</strong> de Estadística Avanzada paso a paso.',
-            '✔️ <strong>Apuntes completos, documentos</strong> y modelos de examen resueltos de cara a enero.',
-            '✔️ Especializado en Estadística Avanzada y Estadística para Finanzas.'
+            '✔️ <strong>Desde diciembre hasta el mismo día de tu examen de enero:</strong> te acompañamos hasta que te examines.',
+            '✔️ <strong>Clases semanales</strong> enfocadas al 100% en superar la asignatura.',
+            '✔️ <strong>Resolución de dudas continua</strong> disponible hasta la fecha de tu examen de enero.',
+            '✔️ Incluye <strong>ejercicios resueltos del boletín, apuntes completos y documentos</strong> de Estadística Avanzada y Estadística para Finanzas.'
         ],
         bulletsInd: [
             '✔️ Clases particulares 1 a 1 (tú solo con la profesora Elena) de <strong>Estadística Avanzada</strong>.',
             '✔️ Resolución paso a paso de los <strong>ejercicios del boletín</strong> y prácticas de tu asignatura.',
-            '✔️ <strong>Apuntes, documentos</strong> y preparación a medida de tus exámenes.',
+            '✔️ Incluye <strong>apuntes, documentos</strong> y preparación a medida de tus exámenes.',
             '✔️ Opción de clase suelta (18 €/h) o <strong>Bono de 5 clases por 80 € (16 €/clase)</strong>.'
         ],
         bulletsGrp: [
             '✔️ Grupo reducido de <strong>3 a 4 personas</strong> de <strong>Estadística Avanzada</strong>.',
             '✔️ Explicación detallada del temario y resolución de <strong>ejercicios del boletín</strong>.',
             '✔️ Incluye <strong>apuntes, documentos</strong> y preparación de exámenes.',
-            '✔️ Tarifa de grupo completo: <strong>40 €</strong> (entre 3 y 4 compañeros).'
+            '✔️ Tarifa: <strong>40 € al mes por persona</strong>.'
         ]
     }
 };
 
-// Detectar asignatura por parámetro (?c=1 o ?c=2) o por variable global
+// Detectar asignatura por parámetro (?c=1 o ?c=2)
 const urlParams = new URLSearchParams(window.location.search);
 const courseKey = window.FORCED_COURSE || urlParams.get('c') || '1';
 const activeCourse = COURSES[courseKey] || COURSES['1'];
@@ -73,13 +73,13 @@ function initPage() {
     document.title = 'Clases Particulares - ' + activeCourse.name;
     document.getElementById('course-hook-title').textContent = activeCourse.hookTitle;
     document.getElementById('course-degrees-subtitle').textContent = activeCourse.degrees;
-    document.getElementById('tag-exam-label').textContent = '🎯 Especial Exámenes de Enero • ' + activeCourse.name;
+    document.getElementById('tag-exam-label').textContent = '🎯 Intensivo Diciembre hasta Examen • ' + activeCourse.name;
     document.getElementById('card-int-heading').textContent = activeCourse.intHeading;
     document.getElementById('card-ind-heading').textContent = activeCourse.indHeading;
     document.getElementById('card-grp-heading').textContent = activeCourse.grpHeading;
     document.getElementById('footer-course-text').textContent = '🎓 Clases Particulares de ' + activeCourse.name + ' • Curso 2026 / 2027';
 
-    // Actualizar enlaces generales de contacto con el nombre de la asignatura
+    // Actualizar enlaces generales de contacto con el nombre de la asignatura (sin "Por favor, ponte en contacto conmigo")
     const defaultMsg = encodeURIComponent('Hola Elena, he escaneado el código QR de ' + activeCourse.name + ' y me gustaría recibir información sobre las clases.');
     document.getElementById('main-wa-btn').href = 'https://wa.me/34664731022?text=' + defaultMsg;
     document.getElementById('main-gm-btn').href = 'mailto:elenagomezfernandez28@gmail.com?subject=' + encodeURIComponent('Información Clases de ' + activeCourse.name) + '&body=' + defaultMsg;
@@ -92,9 +92,9 @@ function initPage() {
         document.getElementById('int-price-sub').textContent = 'Precio sin dto.: 120 €';
     } else {
         document.getElementById('promo-ribbon-banner').classList.add('hidden');
-        document.getElementById('int-price-label').textContent = 'Precio Curso Completo';
+        document.getElementById('int-price-label').textContent = 'Precio Intensivo Completo';
         document.getElementById('int-price-box').innerHTML = '<span class="new-price">120 €</span>';
-        document.getElementById('int-price-sub').textContent = '18 horas en total';
+        document.getElementById('int-price-sub').textContent = 'Desde diciembre hasta tu examen';
     }
 }
 
@@ -110,20 +110,20 @@ function openModalityDetail(type) {
     let bulletList = [];
 
     if (type === 'intensivo') {
-        badge.textContent = '🎯 Intensivo Exámenes de Enero • ' + activeCourse.name;
-        title.textContent = activeCourse.intHeading;
-        desc.textContent = 'Intensivo enfocado a superar los exámenes de enero de ' + activeCourse.name + '. Consta de 2 o 3 horas semanales desde diciembre hasta la primera semana de enero (18 horas el curso completo).';
+        badge.textContent = '🎯 Desde Diciembre hasta tu Examen • ' + activeCourse.name;
+        title.textContent = activeCourse.intHeading + ' (' + activeCourse.name + ')';
+        desc.textContent = 'Curso intensivo con clases semanales que abarca desde diciembre hasta la fecha de tu examen de enero. Aunque los contenidos se completen con antelación, seguimos disponibles resolviendo dudas y practicando contigo hasta el mismo día en que te examines.';
         bulletList = activeCourse.bulletsInt;
         indBtns.classList.add('hidden');
         singleBtn.classList.remove('hidden');
 
         if (isPromoValid()) {
-            priceBox.innerHTML = '💶 Precio: <s>120 €</s> <strong>108 €</strong> (10% de descuento reservando antes del 20 de noviembre).';
-            selectedModalityTitle = activeCourse.intHeading + ' (18h curso completo)';
+            priceBox.innerHTML = '💶 Precio: <s>120 €</s> <strong>108 €</strong> (10% de descuento reservando hasta el 20 de noviembre).';
+            selectedModalityTitle = 'Intensivo desde Diciembre hasta Examen de ' + activeCourse.name;
             selectedModalityPrice = '108 € con el 10% de descuento';
         } else {
-            priceBox.innerHTML = '💶 Precio del curso completo (18 horas): <strong>120 €</strong>.';
-            selectedModalityTitle = activeCourse.intHeading + ' (18h curso completo)';
+            priceBox.innerHTML = '💶 Precio del intensivo (desde diciembre hasta tu examen): <strong>120 €</strong>.';
+            selectedModalityTitle = 'Intensivo desde Diciembre hasta Examen de ' + activeCourse.name;
             selectedModalityPrice = '120 €';
         }
     } else if (type === 'individual') {
@@ -139,11 +139,11 @@ function openModalityDetail(type) {
         title.textContent = activeCourse.grpHeading;
         desc.textContent = 'Clases en grupo reducido de 3 a 4 personas para ' + activeCourse.name + ', con resolución de ejercicios del boletín, apuntes y preparación de exámenes.';
         bulletList = activeCourse.bulletsGrp;
-        priceBox.innerHTML = '💶 Precio del grupo (3 a 4 personas): <strong>40 €</strong>.';
+        priceBox.innerHTML = '💶 Precio en grupo (3 a 4 personas): <strong>40 € al mes por persona</strong>.';
         indBtns.classList.add('hidden');
         singleBtn.classList.remove('hidden');
         selectedModalityTitle = activeCourse.grpHeading + ' (Grupo de 3 a 4 personas)';
-        selectedModalityPrice = '40 €';
+        selectedModalityPrice = '40 € al mes por persona';
     }
 
     bullets.innerHTML = bulletList.map(item => '<li>' + item + '</li>').join('');
@@ -171,7 +171,8 @@ function selectChannel(ch) {
 }
 
 function finalizeBooking() {
-    const msgText = 'Hola Elena, quiero reservar plaza para: ' + selectedModalityTitle + ' (' + selectedModalityPrice + '). Por favor, ponte en contacto conmigo.';
+    // Mensaje limpio sin "Por favor, ponte en contacto conmigo"
+    const msgText = 'Hola Elena, quiero reservar plaza para: ' + selectedModalityTitle + ' (' + selectedModalityPrice + ').';
     const encodedMsg = encodeURIComponent(msgText);
     const encodedSubj = encodeURIComponent('Reserva de Clase: ' + selectedModalityTitle);
 

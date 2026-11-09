@@ -3,40 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clases Particulares</title>
+    <title>Clases Particulares - Estadística</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="mobile-poster">
-        <!-- CABECERA: SOLO SOMBRERITO Y CLASES PARTICULARES -->
+        <!-- CABECERA PERSONALIZADA SEGÚN EL QR ESCANEADO -->
         <header class="academic-header">
             <div class="cap-icon">🎓</div>
-            <h1>Clases Particulares</h1>
+            <div class="header-top-title">Clases Particulares</div>
+            <h1 id="course-hook-title">¿Atascado con ESTADÍSTICA?</h1>
+            <p id="course-degrees-subtitle" class="header-subtitle">
+                Grados: Turismo • ADE • Finanzas y Contabilidad • Criminología • Sociología • Análisis Económico
+            </p>
         </header>
 
-        <!-- VISTA 1: CARTEL PRINCIPAL CON LAS 3 MODALIDADES -->
-        <main class="poster-body" id="main-view">
+        <!-- PASO 1: LISTA DE LAS 3 OPCIONES (INTENSIVO, INDIVIDUAL, GRUPO) -->
+        <main class="poster-body" id="view-list">
+            <p class="tap-instruction">
+                👇 Toca la modalidad que te interese para ver toda la información y reservar plaza:
+            </p>
 
             <!-- OPCIÓN 1: INTENSIVO DICIEMBRE / ENERO -->
-            <section class="card featured-card">
-                <div class="promo-ribbon">
+            <section class="card featured-card" onclick="openModalityDetail('intensivo')">
+                <div id="promo-ribbon-banner" class="promo-ribbon">
                     🔥 <strong>DESCUENTO 10% HASTA EL 30 DE NOVIEMBRE</strong> (Solo en Intensivo)
                 </div>
                 <div class="card-inner">
-                    <span class="tag-exam">🎯 Especial Exámenes de Enero</span>
-                    <h2>Intensivo Diciembre / Enero</h2>
+                    <span id="tag-exam-label" class="tag-exam">🎯 Especial Exámenes de Enero • Estadística</span>
+                    <h2 id="card-int-heading">Intensivo para el Examen de Estadística</h2>
                     <p class="card-desc">
-                        Intensivo enfocado a los <strong>exámenes de enero</strong>. Consta de <strong>18 horas el curso completo</strong>, repartidas en <strong>2 o 3 horas semanales</strong> desde diciembre hasta la primera semana de enero.
+                        Consta de <strong>18 horas el curso completo</strong> (repartidas en <strong>2 o 3 horas semanales</strong> desde diciembre hasta la primera semana de enero). Incluye ejercicios resueltos del boletín, apuntes y documentos.
                     </p>
-
-                    <div class="included-material">
-                        <div class="material-title">📚 ¿Qué incluye el intensivo?</div>
-                        <ul class="material-list">
-                            <li>✔️ <strong>Ejercicios resueltos del boletín</strong> paso a paso.</li>
-                            <li>✔️ <strong>Apuntes completos y documentos</strong> de apoyo para el examen.</li>
-                            <li>✔️ Seguimiento y resolución de dudas de cara a enero.</li>
-                        </ul>
-                    </div>
 
                     <div class="intensive-stats">
                         <div class="stat-box">
@@ -45,17 +43,17 @@
                             <span class="stat-sub">2/3 h semanales (Dic - 1ª sem. Ene)</span>
                         </div>
                         <div class="stat-box highlight-price">
-                            <span class="stat-label">Precio (Dto. 10% hasta 30 nov)</span>
-                            <div class="price-comparison">
+                            <span id="int-price-label" class="stat-label">Con 10% Dto. (hasta 30 nov)</span>
+                            <div id="int-price-box" class="price-comparison">
                                 <span class="old-price">120 €</span>
                                 <span class="new-price">108 €</span>
                             </div>
-                            <span class="stat-sub">Precio sin dto.: 120 €</span>
+                            <span id="int-price-sub" class="stat-sub">Precio normal: 120 €</span>
                         </div>
                     </div>
 
-                    <button type="button" class="btn-reserve" onclick="openReservationStep('Intensivo Diciembre/Enero (Exámenes de Enero)', '18 horas curso completo (2 o 3 horas semanales desde diciembre hasta la primera semana de enero). Incluye ejercicios resueltos del boletín, apuntes y documentos.', '108 € con el 10% de descuento reservando antes del 30 de noviembre (Precio normal: 120 €)')">
-                        Reservar Intensivo →
+                    <button type="button" class="btn-reserve">
+                        Ver Información y Reservar →
                     </button>
                 </div>
             </section>
@@ -65,15 +63,15 @@
             </div>
 
             <!-- OPCIÓN 2: CLASE INDIVIDUAL + BONO 5 CLASES -->
-            <section class="card modality-card-Full">
+            <section class="card modality-card-Full" onclick="openModalityDetail('individual')">
                 <div class="card-inner">
                     <div class="modality-header-row">
                         <div>
                             <div class="modality-title">
                                 <span class="icon">👤</span>
-                                <h3>Clase Individual (Tú solo)</h3>
+                                <h3 id="card-ind-heading">Clase Individual de Estadística</h3>
                             </div>
-                            <span class="modality-tag">Atención 1 a 1 personalizada</span>
+                            <span class="modality-tag">Atención 1 a 1 personalizada (Tú solo)</span>
                         </div>
                         <div class="price-badge">
                             <span class="amount">18 €</span>
@@ -81,57 +79,43 @@
                         </div>
                     </div>
 
-                    <p class="card-desc mt-desc">
-                        Clases particulares individuales totalmente adaptadas a tu ritmo y asignatura. Incluye explicación detallada del temario, resolución de dudas en directo, práctica con ejercicios del boletín y material de estudio.
+                    <p id="card-ind-desc" class="card-desc mt-desc">
+                        Clases individuales 100% adaptadas a tu ritmo: explicación desde cero, resolución de ejercicios del boletín, apuntes y preparación de examen.
                     </p>
 
-                    <button type="button" class="btn-reserve btn-outline-academic" onclick="openReservationStep('Clase Individual (1 hora)', 'Clase particular 1 a 1 (tú solo con la profesora), adaptada a tu ritmo con resolución de dudas, ejercicios prácticos y material de apoyo.', '18 € / hora')">
-                        Reservar Clase Individual (18 €/h) →
-                    </button>
-
-                    <!-- BONO DESCUENTO 5 CLASES -->
-                    <div class="pack-promo-box">
-                        <div class="pack-top">
-                            <div>
-                                <span class="pack-badge">⭐ DESCUENTO 5 CLASES</span>
-                                <div class="pack-title">Bono de 5 Clases Individuales</div>
-                                <div class="pack-sub">Con el bono de 5 clases se queda en <strong>80 €</strong> (sale a <strong>16 € la clase</strong>).</div>
-                            </div>
-                            <div class="pack-price-box">
-                                <span class="pack-total">80 €</span>
-                                <span class="pack-unit">5 clases (16€/h)</span>
-                            </div>
-                        </div>
-                        <button type="button" class="btn-reserve btn-gold-pack" onclick="openReservationStep('Bono 5 Clases Individuales', 'Pack ahorro de 5 clases particulares individuales (1 a 1) con seguimiento continuo, ejercicios y apuntes.', '80 € el bono de 5 clases (sale a 16 € la clase)')">
-                            Reservar Bono 5 Clases (80 €) →
-                        </button>
+                    <div class="pack-mini-banner">
+                        ⭐ <strong>Descuento Bono 5 clases: 80 €</strong> (se queda a <strong>16 € la clase</strong>)
                     </div>
+
+                    <button type="button" class="btn-reserve btn-outline-academic">
+                        Ver Información y Reservar →
+                    </button>
                 </div>
             </section>
 
             <!-- OPCIÓN 3: CLASE EN GRUPO -->
-            <section class="card modality-card-Full">
+            <section class="card modality-card-Full" onclick="openModalityDetail('grupo')">
                 <div class="card-inner">
                     <div class="modality-header-row">
                         <div>
                             <div class="modality-title">
                                 <span class="icon">👥</span>
-                                <h3>Clase en Grupo (3 a 4 personas)</h3>
+                                <h3 id="card-grp-heading">Clase en Grupo de Estadística</h3>
                             </div>
-                            <span class="modality-tag">Grupo reducido de compañeros</span>
+                            <span class="modality-tag">Grupos reducidos de 3 a 4 personas</span>
                         </div>
                         <div class="price-badge">
                             <span class="amount">40 €</span>
-                            <span class="per-unit">/ hora grupo</span>
+                            <span class="per-unit">/ grupo</span>
                         </div>
                     </div>
 
-                    <p class="card-desc mt-desc">
-                        Clases dinámicas para grupos de <strong>3 a 4 personas</strong>. Incluye explicación del temario, resolución conjunta de ejercicios tipo examen, práctica de boletines y apuntes (sale entre 10 € y 13,30 € la hora por persona).
+                    <p id="card-grp-desc" class="card-desc mt-desc">
+                        Clases para grupos de 3 a 4 compañeros: explicación del temario, práctica con ejercicios resueltos del boletín, apuntes y preparación de exámenes.
                     </p>
 
-                    <button type="button" class="btn-reserve btn-outline-academic" onclick="openReservationStep('Clase en Grupo (3 a 4 personas)', 'Clase para grupo reducido de 3 a 4 compañeros, con resolución de ejercicios de boletín, preparación de exámenes y material de apoyo.', '40 € / hora el grupo completo')">
-                        Reservar Clase en Grupo (40 €/h) →
+                    <button type="button" class="btn-reserve btn-outline-academic">
+                        Ver Información y Reservar →
                     </button>
                 </div>
             </section>
@@ -140,10 +124,10 @@
             <section class="contact-box" id="contact-section">
                 <div class="contact-header">
                     <span class="contact-eyebrow">🎓 Contacto Directo</span>
-                    <p>También puedes escribir directamente por WhatsApp o Gmail:</p>
+                    <p>También puedes escribirnos directamente pulsando aquí:</p>
                 </div>
 
-                <a href="https://wa.me/34664731022?text=Hola%20Elena,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20quiero%20informaci%C3%B3n%20sobre%20las%20clases%20particulares." target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp">
+                <a id="main-wa-btn" href="https://wa.me/34664731022" target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp">
                     <span class="btn-icon">💬</span>
                     <div class="btn-text-col">
                         <span class="btn-main-text">WhatsApp</span>
@@ -151,7 +135,7 @@
                     </div>
                 </a>
 
-                <a href="mailto:elenagomezfernandez28@gmail.com?subject=Informaci%C3%B3n%20Clases%20Particulares&body=Hola%20Elena,%20he%20escaneado%20el%20c%C3%B3digo%20QR%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20clases." onclick="openEmailFallback(event, this.href)" class="btn-contact btn-gmail">
+                <a id="main-gm-btn" href="mailto:elenagomezfernandez28@gmail.com" onclick="openEmailFallback(event, this.href)" class="btn-contact btn-gmail">
                     <span class="btn-icon">✉️</span>
                     <div class="btn-text-col">
                         <span class="btn-main-text">Gmail</span>
@@ -161,18 +145,54 @@
             </section>
         </main>
 
-        <!-- VISTA 2: PANTALLA DE CONFIRMACIÓN DE RESERVA -->
-        <main class="poster-body hidden" id="confirm-view">
+        <!-- PASO 2: INFORMACIÓN DETALLADA DE LA MODALIDAD + BOTONCITO DE RESERVAR -->
+        <main class="poster-body hidden" id="view-detail">
             <section class="card confirm-card">
                 <div class="card-inner">
-                    <button type="button" class="btn-back-top" onclick="goBackToMain()">
-                        ← Volver atrás
+                    <button type="button" class="btn-back-top" onclick="showStep('view-list')">
+                        ← Volver hacia atrás
                     </button>
 
-                    <div class="confirm-badge">📋 Resumen de tu solicitud</div>
-                    <h2 id="confirm-title" class="confirm-heading">Modalidad elegida</h2>
-                    <p id="confirm-desc" class="confirm-details"></p>
-                    <div id="confirm-price" class="confirm-price-box"></div>
+                    <div id="detail-badge" class="confirm-badge">Información de la modalidad</div>
+                    <h2 id="detail-title" class="confirm-heading"></h2>
+                    <p id="detail-description" class="confirm-details"></p>
+
+                    <div class="included-material">
+                        <div class="material-title">📚 Qué incluye y cómo trabajamos:</div>
+                        <ul id="detail-bullets" class="material-list"></ul>
+                    </div>
+
+                    <div id="detail-price-box" class="confirm-price-box"></div>
+
+                    <!-- Opciones de botón Reservar para Individual (1 clase vs Bono 5 clases) -->
+                    <div id="detail-ind-buttons" class="hidden space-y-btn">
+                        <button type="button" class="btn-reserve" onclick="proceedToElenaNotice('individual-1h')">
+                            Reservar Clase Individual (18 €/h) →
+                        </button>
+                        <button type="button" class="btn-reserve btn-gold-pack" onclick="proceedToElenaNotice('individual-bono')">
+                            Reservar Bono 5 Clases (80 € • 16 €/clase) →
+                        </button>
+                    </div>
+
+                    <!-- Botón Reservar general -->
+                    <button type="button" id="detail-single-btn" class="btn-reserve" onclick="proceedToElenaNotice()">
+                        Reservar →
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- PASO 3: AVISO DE ENVÍO DE MENSAJE A LA PROFESORA ELENA + SEGUNDO BOTÓN DE RESERVAR -->
+        <main class="poster-body hidden" id="view-confirm">
+            <section class="card confirm-card">
+                <div class="card-inner">
+                    <button type="button" class="btn-back-top" onclick="showStep('view-detail')">
+                        ← Volver hacia atrás
+                    </button>
+
+                    <div class="confirm-badge">Confirmación de Reserva</div>
+                    <h2 id="confirm-modality-title" class="confirm-heading"></h2>
+                    <div id="confirm-modality-price" class="confirm-price-box"></div>
 
                     <div class="elena-notice-box">
                         <div class="notice-icon">📩</div>
@@ -181,45 +201,43 @@
                         </p>
                     </div>
 
-                    <div class="channel-Format">
-                        <label class="channel-label">Elige por dónde enviar tu reserva a Elena:</label>
-                        <div class="channel-selector">
-                            <button type="button" id="ch-whatsapp" class="ch-btn active" onclick="selectChannel('whatsapp')">
-                                💬 Por WhatsApp<br><small>+34 664 73 10 22</small>
-                            </button>
-                            <button type="button" id="ch-gmail" class="ch-btn" onclick="selectChannel('gmail')">
-                                ✉️ Por Gmail<br><small>elenagomezfernandez28@gmail.com</small>
-                            </button>
-                        </div>
+                    <label class="channel-label">Selecciona por dónde quieres enviar tu reserva a Elena:</label>
+                    <div class="channel-selector">
+                        <button type="button" id="ch-whatsapp" class="ch-btn active" onclick="selectChannel('whatsapp')">
+                            💬 WhatsApp<br><small>+34 664 73 10 22</small>
+                        </button>
+                        <button type="button" id="ch-gmail" class="ch-btn" onclick="selectChannel('gmail')">
+                            ✉️ Gmail<br><small>elenagomezfernandez28@gmail.com</small>
+                        </button>
                     </div>
 
-                    <button type="button" class="btn-reserve btn-confirm-final" onclick="completeReservation()">
+                    <button type="button" class="btn-reserve btn-confirm-final" onclick="finalizeBooking()">
                         Reservar →
                     </button>
                 </div>
             </section>
         </main>
 
-        <!-- VISTA 3: PANTALLA DE CLASE RESERVADA -->
-        <main class="poster-body hidden" id="success-view">
+        <!-- PASO 4: PANTALLA DE CLASE RESERVADA -->
+        <main class="poster-body hidden" id="view-booked">
             <section class="card success-card">
                 <div class="card-inner text-center">
                     <div class="success-check">✅</div>
                     <h2 class="success-title">¡Clase Reservada!</h2>
                     <p class="success-subtitle">
-                        Tu mensaje de reserva para <strong id="success-modality-name"></strong> se ha preparado y abierto para enviarse a la profesora <strong>Elena</strong>. En cuanto lo reciba, se pondrá en contacto contigo.
+                        Tu solicitud para <strong id="booked-modality-label"></strong> ya está lista y se ha abierto el mensaje para la profesora <strong>Elena</strong>. Se pondrá en contacto contigo lo antes posible.
                     </p>
 
                     <div class="direct-resend-box">
                         <p class="resend-hint">Si no se ha abierto automáticamente en tu dispositivo, pulsa aquí para enviarlo:</p>
-                        <a id="direct-wa-final" href="#" target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp mb-small">
+                        <a id="final-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-contact btn-whatsapp mb-small">
                             <span class="btn-icon">💬</span>
                             <div class="btn-text-col">
                                 <span class="btn-main-text">Enviar por WhatsApp</span>
                                 <span class="btn-sub-text">+34 664 73 10 22</span>
                             </div>
                         </a>
-                        <a id="direct-gm-final" href="#" onclick="openEmailFallback(event, this.href)" class="btn-contact btn-gmail-dark">
+                        <a id="final-gm-link" href="#" onclick="openEmailFallback(event, this.href)" class="btn-contact btn-gmail-dark">
                             <span class="btn-icon">✉️</span>
                             <div class="btn-text-col">
                                 <span class="btn-main-text">Enviar por Gmail</span>
@@ -228,15 +246,15 @@
                         </a>
                     </div>
 
-                    <button type="button" class="btn-back-main" onclick="goBackToMain()">
-                        ← Volver hacia atrás al inicio
+                    <button type="button" class="btn-back-main" onclick="showStep('view-list')">
+                        ← Volver hacia atrás
                     </button>
                 </div>
             </section>
         </main>
 
         <footer class="academic-footer">
-            <p>🎓 Clases Particulares • Curso 2026 / 2027</p>
+            <p id="footer-course-text">🎓 Clases Particulares de Estadística • Curso 2026 / 2027</p>
         </footer>
     </div>
 

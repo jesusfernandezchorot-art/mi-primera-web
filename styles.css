@@ -30,7 +30,6 @@ body {
     display: none !important;
 }
 
-/* Contenedor tipo cartel móvil */
 .mobile-poster {
     max-width: 440px;
     margin: 0 auto;
@@ -45,22 +44,41 @@ body {
     background: linear-gradient(180deg, #132f5c 0%, #0f2547 100%);
     color: #ffffff;
     text-align: center;
-    padding: 1.5rem 1.25rem 1.35rem;
+    padding: 1.4rem 1.2rem 1.3rem;
     border-bottom: 4px solid var(--gold-accent);
 }
 
 .cap-icon {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     line-height: 1;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+
+.header-top-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fde68a;
+    margin-bottom: 0.3rem;
 }
 
 .academic-header h1 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.65rem;
-    line-height: 1.2;
-    letter-spacing: 0.01em;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+}
+
+.header-subtitle {
+    font-size: 0.8rem;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 0.4rem 0.65rem;
 }
 
 .poster-body {
@@ -70,12 +88,30 @@ body {
     gap: 1rem;
 }
 
+.tap-instruction {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-academic);
+    background: #e0f2fe;
+    border: 1px solid #bae6fd;
+    padding: 0.45rem 0.65rem;
+    border-radius: 10px;
+}
+
 .card {
     background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 37, 71, 0.12);
 }
 
 .featured-card {
@@ -109,7 +145,7 @@ body {
 
 .featured-card h2 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: var(--primary-academic);
     margin-bottom: 0.35rem;
 }
@@ -124,29 +160,39 @@ body {
     margin-top: 0.55rem;
 }
 
+.pack-mini-banner {
+    background: #eff6ff;
+    border: 1px dashed #60a5fa;
+    color: #1e3a8a;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
 .included-material {
     background: #f1f5f9;
     border-left: 3px solid var(--primary-academic);
     border-radius: 8px;
-    padding: 0.65rem 0.75rem;
-    margin-bottom: 0.85rem;
+    padding: 0.7rem 0.8rem;
+    margin-bottom: 0.9rem;
 }
 
 .material-title {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--primary-academic);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
 }
 
 .material-list {
     list-style: none;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: var(--text-main);
 }
 
 .material-list li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 
 .intensive-stats {
@@ -223,15 +269,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     cursor: pointer;
-    transition: transform 0.1s ease, opacity 0.2s ease;
-}
-
-.btn-reserve:hover {
-    opacity: 0.94;
-}
-
-.btn-reserve:active {
-    transform: scale(0.98);
 }
 
 .btn-outline-academic {
@@ -240,7 +277,7 @@ body {
 }
 
 .btn-gold-pack {
-    margin-top: 0.65rem;
+    margin-top: 0.55rem;
     background: linear-gradient(90deg, #0f2547, #1e3a8a);
     border: 1px solid var(--gold-accent);
     color: #fde68a;
@@ -277,7 +314,7 @@ body {
 
 .modality-title h3 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--primary-academic);
 }
 
@@ -310,70 +347,6 @@ body {
     font-size: 0.72rem;
     color: var(--text-muted);
     font-weight: 600;
-}
-
-/* Bono 5 clases por 80€ (16€/clase) */
-.pack-promo-box {
-    margin-top: 0.9rem;
-    background: linear-gradient(90deg, #eff6ff 0%, #dbeafe 100%);
-    border: 1px dashed #60a5fa;
-    border-radius: 12px;
-    padding: 0.85rem;
-}
-
-.pack-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-}
-
-.pack-badge {
-    display: inline-block;
-    background: var(--primary-academic);
-    color: #fde68a;
-    font-size: 0.68rem;
-    font-weight: 800;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.2rem;
-}
-
-.pack-title {
-    font-family: Georgia, serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--primary-academic);
-}
-
-.pack-sub {
-    font-size: 0.78rem;
-    color: #1e3a8a;
-}
-
-.pack-price-box {
-    background: var(--primary-academic);
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 0.45rem 0.7rem;
-    text-align: center;
-    min-width: 88px;
-    flex-shrink: 0;
-    border: 1px solid var(--gold-accent);
-}
-
-.pack-total {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #fde68a;
-    line-height: 1.1;
-}
-
-.pack-unit {
-    font-size: 0.7rem;
-    color: #e2e8f0;
 }
 
 /* Caja de Contacto */
@@ -415,11 +388,6 @@ body {
     text-decoration: none;
     padding: 0.8rem 1rem;
     border-radius: 12px;
-    transition: transform 0.1s ease;
-}
-
-.btn-contact:active {
-    transform: scale(0.98);
 }
 
 .btn-whatsapp {
@@ -462,9 +430,14 @@ body {
     opacity: 0.92;
 }
 
-/* VISTA 2: CONFIRMACIÓN DE RESERVA */
+/* VISTAS DE DETALLE Y CONFIRMACIÓN */
 .confirm-card {
     border: 2px solid var(--primary-academic);
+    cursor: default;
+}
+
+.confirm-card:hover {
+    transform: none;
 }
 
 .btn-back-top {
@@ -495,13 +468,13 @@ body {
     font-family: Georgia, serif;
     font-size: 1.25rem;
     color: var(--primary-academic);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.45rem;
 }
 
 .confirm-details {
     font-size: 0.85rem;
     color: var(--text-muted);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
 }
 
 .confirm-price-box {
@@ -510,7 +483,7 @@ body {
     color: #92400e;
     font-weight: 800;
     font-size: 0.9rem;
-    padding: 0.6rem 0.8rem;
+    padding: 0.65rem 0.8rem;
     border-radius: 10px;
     margin-bottom: 1rem;
 }
@@ -582,7 +555,6 @@ body {
     padding: 0.9rem;
 }
 
-/* VISTA 3: RESERVA COMPLETADA */
 .text-center {
     text-align: center;
 }
